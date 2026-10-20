@@ -1,0 +1,13 @@
+// 사이트 전역. KRDS 토큰을 쓰고 색상 값은 직접 적지 않는다.
+#wrap { display: flex; flex-direction: column; min-height: 100vh; }
+#container { flex: 1; }
+#main { min-height: 50vh; }
+// KRDS 는 a 의 색·밑줄을 지운다. 본문 안의 맨 링크(클래스 없는 a)는 링크로 보이게 한다.
+#main a:not([class]) {
+  color: var(--krds-light-color-text-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

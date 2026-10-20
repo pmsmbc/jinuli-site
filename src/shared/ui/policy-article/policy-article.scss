@@ -1,0 +1,42 @@
+// 긴 글(방침·목록) 페이지 공용 스타일. pages/privacy-app, pages/privacy-index 가 쓴다.
+.policy-wrap {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2.4rem 1.6rem 4.8rem;
+}
+.policy-title {
+  margin: 3.2rem 0 0.6rem;
+  font-size: var(--krds-pc-font-size-heading-large);
+  font-weight: var(--krds-font-weight-bold);
+  line-height: 1.35;
+}
+.policy-meta {
+  margin: 0 0 2.8rem;
+  color: var(--krds-light-color-text-subtle);
+}
+.policy-summary {
+  margin: 0 0 0.8rem;
+  padding: 1.4rem 1.8rem;
+  background: var(--krds-light-color-surface-white);
+  border: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-border-gray-light);
+  border-left: 0.4rem solid var(--krds-light-color-border-primary);
+  border-radius: var(--krds-radius-medium1);
+}
+.policy h3 {
+  margin: 3.2rem 0 0.8rem;
+  font-size: var(--krds-pc-font-size-heading-small);
+  font-weight: var(--krds-font-weight-bold);
+}
+.policy p { margin: 0 0 1rem; }
+.policy a { word-break: break-all; }
+.policy-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4rem 1.2rem; margin: 0 0 0.8rem; }
+}
+.policy-list-date { color: var(--krds-light-color-text-subtle); font-size: var(--krds-pc-font-size-body-small); }
+@media (max-width: 767px) {
+  .policy-title { font-size: var(--krds-mobile-font-size-heading-large); }
+  .policy h3 { font-size: var(--krds-mobile-font-size-heading-small); }
+}

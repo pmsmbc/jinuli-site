@@ -1,0 +1,33 @@
+// KRDS 헤더의 .logo 는 고정 폭 + 배경 이미지(krds.go.kr 로고)를 전제한다. 이 사이트는 글자 로고라 그 부분만 덮는다.
+#krds-header .header-container .logo.site-logo {
+  width: auto;
+  height: auto;
+  margin: 0;
+  font-size: inherit;
+  a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    width: auto;
+    height: auto;
+    background-image: none;
+    text-decoration: none;
+    color: var(--krds-light-color-text-basic);
+    white-space: nowrap;
+  }
+  .site-logo-ko {
+    font-size: var(--krds-pc-font-size-heading-small);
+    font-weight: var(--krds-font-weight-bold);
+    letter-spacing: -0.02em;
+  }
+  .site-logo-en {
+    font-size: var(--krds-pc-font-size-body-small);
+    color: var(--krds-light-color-text-subtle);
+  }
+}
+// 모바일 메뉴 패널 폭. 샘플은 2열(1depth/2depth)인데 여기는 1depth 뿐이라 메뉴 목록이 전체 폭을 쓴다.
+#krds-header .krds-main-menu-mobile .gnb-wrap { width: min(32rem, 85vw); }
+#krds-header .krds-main-menu-mobile .menu-wrap { width: 100%; }
+@media (max-width: 767px) {
+  #krds-header .header-container .logo.site-logo .site-logo-en { display: none; }
+}

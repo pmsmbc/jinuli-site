@@ -1,0 +1,12 @@
+.not-found {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 6.4rem 1.6rem 8rem;
+}
+.not-found-title {
+  margin: 0 0 0.8rem;
+  font-size: var(--krds-pc-font-size-heading-large);
+  font-weight: var(--krds-font-weight-bold);
+}
+.not-found-lead { margin: 0 0 2.4rem; color: var(--krds-light-color-text-subtle); }
+.not-found-actions { display: flex; flex-wrap: wrap; gap: 1.2rem; margin: 0; }

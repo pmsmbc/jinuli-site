@@ -1,0 +1,1 @@
+export { KRDSSkipLink } from './KRDSSkipLink';

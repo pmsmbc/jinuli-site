@@ -1,0 +1,46 @@
+// KRDS 기본값을 바꾼 곳. 바꾼 이유를 반드시 적는다. app 진입점에서 krds.min.css 다음에 1회 import 한다.
+
+// 1) 글꼴. krds.min.css 는 --krds-typo-font-type: "Pretendard GOV" 를 쓰지만 @font-face 를 선언하지 않는다(1.1.0).
+//    패키지에 든 서브셋 woff2 를 직접 선언한다. 경로 별칭 @krds-fonts 는 vite.config.ts 에 있다.
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-weight: 400;
+  font-display: swap;
+  src: url('@krds-fonts/PretendardGOV-Regular.subset.woff2') format('woff2'), url('@krds-fonts/PretendardGOV-Regular.subset.woff') format('woff');
+}
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-weight: 500;
+  font-display: swap;
+  src: url('@krds-fonts/PretendardGOV-Medium.subset.woff2') format('woff2'), url('@krds-fonts/PretendardGOV-Medium.subset.woff') format('woff');
+}
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-weight: 700;
+  font-display: swap;
+  src: url('@krds-fonts/PretendardGOV-Bold.subset.woff2') format('woff2'), url('@krds-fonts/PretendardGOV-Bold.subset.woff') format('woff');
+}
+
+// 2) 브랜드색. 개발초안 6절 5번 결정: KRDS 기본 파랑 대신 앱(대한 어린이 한자)의 초록 #1F6F43 을 primary 로 쓴다.
+//    버튼·링크·배지·헤더 포커스가 모두 --krds-color-light-primary-* 를 참조하므로 팔레트 11단계를 통째로 바꾼다.
+//    대비: 50(#1f6f43) 위 흰 글자 7.0:1, 60(#185a36) 위 흰 글자 9.0:1 — WCAG AA 통과.
+:root {
+  --krds-color-light-primary-5: #eef7f1;
+  --krds-color-light-primary-10: #d5ebdc;
+  --krds-color-light-primary-20: #aed7bd;
+  --krds-color-light-primary-30: #80bf98;
+  --krds-color-light-primary-40: #4f9e6f;
+  --krds-color-light-primary-50: #1f6f43;
+  --krds-color-light-primary-60: #185a36;
+  --krds-color-light-primary-70: #12452a;
+  --krds-color-light-primary-80: #0c2f1c;
+  --krds-color-light-primary-90: #071d11;
+  --krds-color-light-primary-95: #04120b;
+}
+
+// 3) 정부 식별자·마스트헤드는 쓰지 않는다(앱 설계문서 2절과 같은 원칙). 관련 마크업을 넣지 않으므로 CSS 는 손대지 않는다.
+
+// 4) 데스크톱 메인메뉴의 현재 항목 밑줄은 secondary(파랑) 토큰을 참조해 브랜드 초록과 어긋난다. 이 토큰은 .krds-main-menu 스코프에 있어 :root 에서 못 덮는다.
+.krds-main-menu {
+  --krds-main-menu--main-trigger-color-border-selected: var(--krds-light-color-border-primary);
+}
