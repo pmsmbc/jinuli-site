@@ -67,30 +67,14 @@ body {
   --krds-main-menu--main-trigger-color-border-selected: var(--krds-light-color-border-primary);
 }
 
-// 6) 버튼 모양 (2026-10-21 사용자 결정). 참고 사이트(어린이국회)처럼 "살짝 둥근 사각" 1.2rem 으로 통일하고,
-//    보조 버튼(secondary)은 흰 바탕에 초록 점선 테두리. radius 토큰은 .krds-btn 스코프라 :root 에서 못 덮는다.
-//    점선 #2e7d4f 는 흰 바탕 5.0:1, 민트 바탕 4.8:1 — 그래픽 3:1 기준 통과.
-.krds-btn {
-  --krds-button--radius-xsmall: 0.8rem;
-  --krds-button--radius-small: 1rem;
-  --krds-button--radius-medium: 1.2rem;
-  --krds-button--radius-large: 1.2rem;
-  --krds-button--radius-xlarge: 1.2rem;
-  font-weight: var(--krds-font-weight-bold);
-}
-.krds-btn.secondary {
-  background-color: var(--krds-light-color-surface-white);
-  border: 0.2rem dashed var(--krds-light-color-button-secondary-border);
-  color: var(--krds-light-color-text-primary);
-  &:hover,
-  &:focus-visible {
-    background-color: var(--krds-light-color-button-secondary-fill-hover);
-  }
-  &:active {
-    background-color: var(--krds-light-color-button-secondary-fill-pressed);
-  }
-}
-.krds-btn.tertiary {
-  border-width: 0.2rem;
-  border-style: dashed;
+// 6) 버튼 포커스·클릭 표시 (2026-10-21 사용자 결정). 버튼 자체는 KRDS 기본 모양(실선 테두리·기본 radius)을 그대로 쓴다.
+//    KRDS 기본 포커스는 흰 실선 outline + 초록 box-shadow 인데, 이 사이트는 참고 사이트(어린이국회)처럼
+//    "초록 점선, 모서리 둥근" 아웃라인으로 바꾼다. outline 은 border-radius 를 따라 둥글게 그려진다(Chrome 94+, Safari 16.4+).
+//    점선 #2e7d4f 는 흰 바탕 5.0:1, 민트 바탕 4.8:1 — 포커스 표시 3:1 기준 통과.
+.krds-btn:focus,
+.krds-btn:focus-visible,
+.krds-btn:active {
+  outline: 0.2rem dashed var(--krds-light-color-border-primary);
+  outline-offset: 0.3rem;
+  box-shadow: none;
 }
