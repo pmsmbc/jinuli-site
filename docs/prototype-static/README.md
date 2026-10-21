@@ -24,5 +24,5 @@ http://localhost:8080 에서 본다.
    - `CNAME` 레코드 `www` → `<github계정>.github.io`
 
 ## 고칠 값
-- 연락 이메일 `contact@jinuli.com`: `index.html`, `privacy/index.html`, `privacy/daehan-kids-hanja/index.html` 세 곳.
+- 연락 이메일 `admin@jinuli.com`: `index.html`, `privacy/index.html`, `privacy/daehan-kids-hanja/index.html` 세 곳.
 - 사업자등록번호: `index.html` 회사 절의 "등록 진행 중".
