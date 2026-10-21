@@ -1,39 +1,47 @@
-.home-hero { padding: 5.6rem 0 3.2rem; }
+// 첫 화면. 글자 크기는 참고 사이트(어린이국회) 기준: 첫 문구 44px, 설명 18px. 바탕은 body 의 민트 그대로.
+.home-hero { padding: 6.4rem 0 3.2rem; }
 .home-hero-in {
   max-width: var(--krds-contents-wrap-size);
   margin: 0 auto;
   padding: 0 3.2rem 0 1.6rem; // 오른쪽 여유: 카드의 도장이 밖으로 삐져나온다
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 3.2rem;
+  gap: 4rem;
   align-items: center;
 }
 .home-hero-title {
-  margin: 0 0 1.6rem;
-  font-size: var(--krds-pc-font-size-display-small);
+  margin: 0 0 1.8rem;
+  font-size: 4.4rem;
   font-weight: var(--krds-font-weight-bold);
-  line-height: 1.35;
-  letter-spacing: -0.02em;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
 }
 .home-hero-lead {
-  margin: 0;
-  max-width: 36em;
+  margin: 0 0 2.8rem;
+  max-width: 32em;
   color: var(--krds-light-color-text-subtle);
-  font-size: var(--krds-pc-font-size-body-large);
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+.home-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 0;
 }
 .home-info {
   display: grid;
-  grid-template-columns: 10em 1fr;
-  gap: 0.6rem 1.6rem;
+  grid-template-columns: 11em 1fr;
+  gap: 1rem 1.6rem;
   margin: 0;
   dt { color: var(--krds-light-color-text-subtle); }
   dd { margin: 0; }
 }
-.home-contact { font-size: var(--krds-pc-font-size-body-large); }
+.home-contact { margin: 2rem 0 0; }
 @media (max-width: 767px) {
   .home-hero { padding-top: 3.6rem; }
-  .home-hero-in { grid-template-columns: 1fr; padding-right: 1.6rem; }
-  .home-hero-title { font-size: var(--krds-mobile-font-size-display-small); }
-  .home-hero-lead { font-size: var(--krds-mobile-font-size-body-large); }
-  .home-info { grid-template-columns: 1fr; gap: 0; dd { margin-bottom: 1rem; } }
+  .home-hero-in { grid-template-columns: 1fr; padding-right: 1.6rem; gap: 3.2rem; }
+  .home-hero-title { font-size: 3.2rem; }
+  .home-hero-lead { font-size: 1.7rem; }
+  .home-info { grid-template-columns: 1fr; gap: 0; dd { margin-bottom: 1.2rem; } }
 }

@@ -1,3 +1,7 @@
+// 푸터 바탕은 KRDS 회색(gray-5) 대신 앱의 조금 더 진한 민트(primary-10). 본문 민트(primary-5)와 구분된다.
+#krds-footer {
+  background-color: var(--krds-color-light-primary-10);
+}
 // 푸터 정보 영역의 메일 링크가 KRDS 기본 strong 색에 묻히지 않게 밑줄만 준다.
 #krds-footer .info-cs a {
   color: inherit;

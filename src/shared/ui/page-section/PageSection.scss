@@ -1,6 +1,7 @@
+// 절 = 민트 바탕 위 제목 + 흰 카드 본문. 글자 크기는 참고 사이트(어린이국회) 기준: 절 제목 30px, 본문 17px(KRDS body-medium).
 .page-section {
-  padding: 4rem 0;
-  border-top: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-divider-gray-light);
+  padding: 2.4rem 0;
+  &:last-child { padding-bottom: 6.4rem; }
 }
 .page-section-in {
   max-width: var(--krds-contents-wrap-size);
@@ -8,11 +9,23 @@
   padding: 0 1.6rem;
 }
 .page-section-title {
-  margin: 0 0 1.6rem;
-  font-size: var(--krds-pc-font-size-heading-medium);
+  margin: 0 0 1.4rem;
+  font-size: 3rem;
   font-weight: var(--krds-font-weight-bold);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.page-section-card {
+  background: var(--krds-light-color-surface-white);
+  border-radius: 1.8rem;
+  padding: 3.2rem;
+  border: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-border-gray-light);
+  &.dashed {
+    border: 0.2rem dashed var(--krds-light-color-border-primary);
+  }
 }
 @media (max-width: 767px) {
-  .page-section { padding: 3.2rem 0; }
-  .page-section-title { font-size: var(--krds-mobile-font-size-heading-medium); }
+  .page-section { padding: 2rem 0; }
+  .page-section-title { font-size: 2.4rem; }
+  .page-section-card { padding: 2rem 1.8rem; border-radius: 1.4rem; }
 }

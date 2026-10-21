@@ -1,3 +1,7 @@
+// 헤더는 흰색 그대로 두고 민트 본문과 아래 테두리(연한 초록 선)로 나눈다.
+#krds-header {
+  border-bottom: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-border-gray-light);
+}
 // KRDS 헤더의 .logo 는 고정 폭 + 배경 이미지(krds.go.kr 로고)를 전제한다. 이 사이트는 글자 로고라 그 부분만 덮는다.
 #krds-header .header-container .logo.site-logo {
   width: auto;
@@ -16,7 +20,7 @@
     white-space: nowrap;
   }
   .site-logo-ko {
-    font-size: var(--krds-pc-font-size-heading-small);
+    font-size: 2.2rem;
     font-weight: var(--krds-font-weight-bold);
     letter-spacing: -0.02em;
   }
@@ -24,6 +28,10 @@
     font-size: var(--krds-pc-font-size-body-small);
     color: var(--krds-light-color-text-subtle);
   }
+}
+// 메인메뉴 글자를 참고 사이트(어린이국회) 수준인 18px 로 키운다. 토큰은 .krds-main-menu 스코프.
+#krds-header .krds-main-menu {
+  --krds-main-menu--main-trigger-font-size: 1.8rem;
 }
 // 모바일 메뉴 패널 폭. 샘플은 2열(1depth/2depth)인데 여기는 1depth 뿐이라 메뉴 목록이 전체 폭을 쓴다.
 #krds-header .krds-main-menu-mobile .gnb-wrap { width: min(32rem, 85vw); }

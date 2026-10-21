@@ -21,26 +21,76 @@
   src: url('@krds-fonts/PretendardGOV-Bold.subset.woff2') format('woff2'), url('@krds-fonts/PretendardGOV-Bold.subset.woff') format('woff');
 }
 
-// 2) 브랜드색. 개발초안 6절 5번 결정: KRDS 기본 파랑 대신 앱(대한 어린이 한자)의 초록 #1F6F43 을 primary 로 쓴다.
-//    버튼·링크·배지·헤더 포커스가 모두 --krds-color-light-primary-* 를 참조하므로 팔레트 11단계를 통째로 바꾼다.
-//    대비: 50(#1f6f43) 위 흰 글자 7.0:1, 60(#185a36) 위 흰 글자 9.0:1 — WCAG AA 통과.
+// 2) 브랜드색 (2026-10-21 사용자 결정, 시안 A). 앱(대한 어린이 한자) src/theme/colors.ts 의 녹색 팔레트를 그대로 가져온다.
+//    - primary 11단계: 5=앱 배경 #F5FAF6, 10=bgSubtler, 20=bgSubtle, 50=앱 주 버튼 #2E7D4F, 60=앱 success #1E6B3A.
+//      버튼·링크·배지·헤더 포커스가 모두 --krds-color-light-primary-* 를 참조하므로 통째로 바꾼다.
+//      대비: 50(#2e7d4f) 위 흰 글자 5.0:1, 60(#1e6b3a) 위 흰 글자 6.5:1 — WCAG AA 통과.
+//    - gray 단계도 앱의 녹회색으로 덮는다. 글자(90=#1B2E22, 70=#3F5A48)와 테두리(20=#C9DECF, 60=#6E8D78)가
+//      민트 배경 위에서 KRDS 순수 회색보다 자연스럽다. 0(흰색)·100(검정)은 그대로 둔다.
+//      대비: 90 위 흰 바탕 14.4:1, 70 위 민트(#F5FAF6) 7.2:1, 테두리 60 위 민트 5.0:1.
 :root {
-  --krds-color-light-primary-5: #eef7f1;
-  --krds-color-light-primary-10: #d5ebdc;
-  --krds-color-light-primary-20: #aed7bd;
-  --krds-color-light-primary-30: #80bf98;
-  --krds-color-light-primary-40: #4f9e6f;
-  --krds-color-light-primary-50: #1f6f43;
-  --krds-color-light-primary-60: #185a36;
-  --krds-color-light-primary-70: #12452a;
-  --krds-color-light-primary-80: #0c2f1c;
-  --krds-color-light-primary-90: #071d11;
-  --krds-color-light-primary-95: #04120b;
+  --krds-color-light-primary-5: #f5faf6;
+  --krds-color-light-primary-10: #e8f3ea;
+  --krds-color-light-primary-20: #d6e9da;
+  --krds-color-light-primary-30: #a9d3b6;
+  --krds-color-light-primary-40: #5fa37c;
+  --krds-color-light-primary-50: #2e7d4f;
+  --krds-color-light-primary-60: #1e6b3a;
+  --krds-color-light-primary-70: #1a5530;
+  --krds-color-light-primary-80: #123d22;
+  --krds-color-light-primary-90: #0b2715;
+  --krds-color-light-primary-95: #071a0e;
+
+  --krds-color-light-gray-5: #f0f6f2;
+  --krds-color-light-gray-10: #e3ede6;
+  --krds-color-light-gray-20: #c9decf;
+  --krds-color-light-gray-30: #a9c4b2;
+  --krds-color-light-gray-40: #86a391;
+  --krds-color-light-gray-50: #6e8d78;
+  --krds-color-light-gray-60: #587262;
+  --krds-color-light-gray-70: #3f5a48;
+  --krds-color-light-gray-80: #2a4032;
+  --krds-color-light-gray-90: #1b2e22;
+  --krds-color-light-gray-95: #112019;
 }
 
-// 3) 정부 식별자·마스트헤드는 쓰지 않는다(앱 설계문서 2절과 같은 원칙). 관련 마크업을 넣지 않으므로 CSS 는 손대지 않는다.
+// 3) 페이지 배경. KRDS 는 body 를 흰색으로 두지만 이 사이트는 앱 배경색(primary-5, 연한 민트)을 전면에 깐다.
+//    내용은 흰 카드(.page-section-card 등)로 올라온다. krds.min.css 뒤에 와야 이긴다.
+body {
+  background-color: var(--krds-color-light-primary-5);
+}
 
-// 4) 데스크톱 메인메뉴의 현재 항목 밑줄은 secondary(파랑) 토큰을 참조해 브랜드 초록과 어긋난다. 이 토큰은 .krds-main-menu 스코프에 있어 :root 에서 못 덮는다.
+// 4) 정부 식별자·마스트헤드는 쓰지 않는다(앱 설계문서 2절과 같은 원칙). 관련 마크업을 넣지 않으므로 CSS 는 손대지 않는다.
+
+// 5) 데스크톱 메인메뉴의 현재 항목 밑줄은 secondary(파랑) 토큰을 참조해 브랜드 초록과 어긋난다. 이 토큰은 .krds-main-menu 스코프에 있어 :root 에서 못 덮는다.
 .krds-main-menu {
   --krds-main-menu--main-trigger-color-border-selected: var(--krds-light-color-border-primary);
+}
+
+// 6) 버튼 모양 (2026-10-21 사용자 결정). 참고 사이트(어린이국회)처럼 "살짝 둥근 사각" 1.2rem 으로 통일하고,
+//    보조 버튼(secondary)은 흰 바탕에 초록 점선 테두리. radius 토큰은 .krds-btn 스코프라 :root 에서 못 덮는다.
+//    점선 #2e7d4f 는 흰 바탕 5.0:1, 민트 바탕 4.8:1 — 그래픽 3:1 기준 통과.
+.krds-btn {
+  --krds-button--radius-xsmall: 0.8rem;
+  --krds-button--radius-small: 1rem;
+  --krds-button--radius-medium: 1.2rem;
+  --krds-button--radius-large: 1.2rem;
+  --krds-button--radius-xlarge: 1.2rem;
+  font-weight: var(--krds-font-weight-bold);
+}
+.krds-btn.secondary {
+  background-color: var(--krds-light-color-surface-white);
+  border: 0.2rem dashed var(--krds-light-color-button-secondary-border);
+  color: var(--krds-light-color-text-primary);
+  &:hover,
+  &:focus-visible {
+    background-color: var(--krds-light-color-button-secondary-fill-hover);
+  }
+  &:active {
+    background-color: var(--krds-light-color-button-secondary-fill-pressed);
+  }
+}
+.krds-btn.tertiary {
+  border-width: 0.2rem;
+  border-style: dashed;
 }

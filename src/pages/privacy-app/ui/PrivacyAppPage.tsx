@@ -30,20 +30,22 @@ export function PrivacyAppPage() {
         <article className="policy">
           <h2 className="policy-title">{policy.appName} 개인정보처리방침</h2>
           <p className="policy-meta">시행일 {policy.effectiveDate} · 개발사 {COMPANY.name}</p>
-          <p className="policy-summary">{policy.summary}</p>
+          <div className="policy-body">
+            <p className="policy-summary">{policy.summary}</p>
 
-          {policy.sections.map((s) => (
-            <section key={s.title}>
-              <h3>{s.title}</h3>
-              {s.body.map((para, i) => (
-                <p key={i}>
-                  {splitLinks(para).map((part, j) =>
-                    part.type === 'link' ? <a key={j} href={part.value}>{part.value}</a> : <span key={j}>{part.value}</span>,
-                  )}
-                </p>
-              ))}
-            </section>
-          ))}
+            {policy.sections.map((s) => (
+              <section key={s.title}>
+                <h3>{s.title}</h3>
+                {s.body.map((para, i) => (
+                  <p key={i}>
+                    {splitLinks(para).map((part, j) =>
+                      part.type === 'link' ? <a key={j} href={part.value}>{part.value}</a> : <span key={j}>{part.value}</span>,
+                    )}
+                  </p>
+                ))}
+              </section>
+            ))}
+          </div>
         </article>
       </div>
     </>
