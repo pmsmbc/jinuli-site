@@ -1,10 +1,5 @@
-// 푸터 바탕은 KRDS 회색(gray-5) 대신 앱의 조금 더 진한 민트(primary-10). 본문 민트(primary-5)와 구분된다.
-#krds-footer {
-  background-color: var(--krds-color-light-primary-10);
-}
-// 푸터 정보 영역의 메일 링크가 KRDS 기본 strong 색에 묻히지 않게 밑줄만 준다.
-#krds-footer .info-cs a {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+// 푸터는 KRDS 기본 스타일(바탕 surface-gray-subtler, 구조·글자 모두 기본)을 그대로 쓴다.
+// krds.min.css 가 .f-logo 에 krds.go.kr 로고 URL 을 박아 두므로 이미지만 이 사이트 것으로 바꾼다(헤더와 같은 파일).
+#krds-footer .f-logo {
+  background-image: url('/logo.svg');
 }
