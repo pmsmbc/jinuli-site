@@ -8,10 +8,6 @@
 #krds-header .header-container .logo a {
   background-image: url('/logo.svg');
 }
-// 메인메뉴 글자를 참고 사이트(어린이국회) 수준인 18px 로 키운다. 토큰은 .krds-main-menu 스코프.
-#krds-header .krds-main-menu {
-  --krds-main-menu--main-trigger-font-size: 1.8rem;
-}
 // 모바일 메뉴 패널 폭. 샘플은 2열(1depth/2depth)인데 여기는 1depth 뿐이라 메뉴 목록이 전체 폭을 쓴다.
 #krds-header .krds-main-menu-mobile .gnb-wrap { width: min(32rem, 85vw); }
 #krds-header .krds-main-menu-mobile .menu-wrap { width: 100%; }
