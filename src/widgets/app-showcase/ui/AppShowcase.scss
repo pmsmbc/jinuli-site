@@ -8,7 +8,7 @@
 .app-showcase-mark {
   width: 7.2rem;
   height: 7.2rem;
-  border-radius: 1.8rem;
+  border-radius: var(--krds-radius-xlarge1);
   background: var(--krds-color-light-primary-10);
   color: var(--krds-light-color-text-primary);
   display: flex;
@@ -20,8 +20,8 @@
   line-height: 1;
 }
 .app-showcase-name {
-  margin: 0 0 0.6rem;
-  font-size: 2.2rem;
+  margin: 0 0 var(--krds-gap-2);
+  font-size: var(--krds-pc-font-size-heading-medium);
   font-weight: var(--krds-font-weight-bold);
 }
 .app-showcase-meta {
@@ -36,6 +36,6 @@
 .app-showcase-links { margin: 2rem 0 0; }
 @media (max-width: 767px) {
   .app-showcase { grid-template-columns: 5.6rem 1fr; gap: 1.4rem; }
-  .app-showcase-mark { width: 5.6rem; height: 5.6rem; font-size: 2.8rem; border-radius: 1.4rem; }
-  .app-showcase-name { font-size: 2rem; }
+  .app-showcase-mark { width: 5.6rem; height: 5.6rem; font-size: 2.8rem; }
+  .app-showcase-name { font-size: var(--krds-mobile-font-size-heading-medium); }
 }

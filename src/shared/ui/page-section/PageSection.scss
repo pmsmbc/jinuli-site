@@ -1,31 +1,30 @@
-// 절 = 민트 바탕 위 제목 + 흰 카드 본문. 글자 크기는 참고 사이트(어린이국회) 기준: 절 제목 30px, 본문 17px(KRDS body-medium).
+// 절 = 민트 바탕 위 제목 + 흰 카드 본문. 글자·간격·반경은 모두 KRDS 토큰(절 제목 heading-large, 본문 body-medium).
 .page-section {
-  padding: 2.4rem 0;
-  &:last-child { padding-bottom: 6.4rem; }
+  padding: var(--krds-padding-8) 0;
+  &:last-child { padding-bottom: var(--krds-padding-10); }
 }
 .page-section-in {
   max-width: var(--krds-contents-wrap-size);
   margin: 0 auto;
-  padding: 0 1.6rem;
+  padding: 0 var(--krds-contents-padding-x);
 }
 .page-section-title {
-  margin: 0 0 1.4rem;
-  font-size: 3rem;
+  margin: 0 0 var(--krds-gap-5);
+  font-size: var(--krds-pc-font-size-heading-large);
   font-weight: var(--krds-font-weight-bold);
-  letter-spacing: -0.02em;
-  line-height: 1.3;
+  line-height: var(--krds-line-height-base);
 }
 .page-section-card {
   background: var(--krds-light-color-surface-white);
-  border-radius: 1.8rem;
-  padding: 3.2rem;
+  border-radius: var(--krds-radius-xlarge1);
+  padding: var(--krds-padding-9);
   border: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-border-gray-light);
   &.emphasis {
     border: 0.2rem solid var(--krds-light-color-border-primary);
   }
 }
 @media (max-width: 767px) {
-  .page-section { padding: 2rem 0; }
-  .page-section-title { font-size: 2.4rem; }
-  .page-section-card { padding: 2rem 1.8rem; border-radius: 1.4rem; }
+  .page-section { padding: var(--krds-padding-7) 0; }
+  .page-section-title { font-size: var(--krds-mobile-font-size-heading-large); }
+  .page-section-card { padding: var(--krds-padding-7) var(--krds-padding-6); }
 }
