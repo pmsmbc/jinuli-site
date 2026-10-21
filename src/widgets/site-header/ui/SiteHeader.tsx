@@ -1,6 +1,7 @@
 /**
  * 사이트 헤더. 구조는 node_modules/krds-uiux/html/code/header.html (1.1.0) 을 따른다:
  * header#krds-header > .header-in > .header-container > .inner > .header-branding(.logo, .header-actions)
+ * 로고는 KRDS 기본 방식(.logo a 의 배경 이미지 + sr-only 글자). 이미지는 public/logo.svg, 교체 CSS 는 SiteHeader.scss.
  * + nav.krds-main-menu(데스크톱) + #mobile-nav.krds-main-menu-mobile(모바일, .is-open 으로 연다)
  * 유틸리티 메뉴·검색·로그인은 이 사이트에 없어 넣지 않는다.
  */
@@ -28,10 +29,9 @@ export function SiteHeader() {
         <div className="header-container">
           <div className="inner">
             <div className="header-branding">
-              <h1 className="logo site-logo">
+              <h1 className="logo">
                 <Link to="/">
-                  <span className="site-logo-ko">{COMPANY.name}</span>
-                  <span className="site-logo-en">{COMPANY.nameEn}</span>
+                  <span className="sr-only">{COMPANY.name}</span>
                 </Link>
               </h1>
               <div className="header-actions">

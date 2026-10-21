@@ -2,32 +2,11 @@
 #krds-header {
   border-bottom: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-border-gray-light);
 }
-// KRDS 헤더의 .logo 는 고정 폭 + 배경 이미지(krds.go.kr 로고)를 전제한다. 이 사이트는 글자 로고라 그 부분만 덮는다.
-#krds-header .header-container .logo.site-logo {
-  width: auto;
-  height: auto;
-  margin: 0;
-  font-size: inherit;
-  a {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.8rem;
-    width: auto;
-    height: auto;
-    background-image: none;
-    text-decoration: none;
-    color: var(--krds-light-color-text-basic);
-    white-space: nowrap;
-  }
-  .site-logo-ko {
-    font-size: 2.2rem;
-    font-weight: var(--krds-font-weight-bold);
-    letter-spacing: -0.02em;
-  }
-  .site-logo-en {
-    font-size: var(--krds-pc-font-size-body-small);
-    color: var(--krds-light-color-text-subtle);
-  }
+// 로고는 KRDS 기본 스타일(.logo 13.7rem x 4.8rem, 모바일 9.4rem x 3.2rem, a 에 배경 이미지)을 그대로 쓴다.
+// krds.min.css 가 krds.go.kr 로고 URL 을 박아 두므로 이미지만 이 사이트 것으로 바꾼다.
+// public/logo.svg 는 Pretendard GOV Bold 글리프를 패스로 바꾼 워드마크라 글꼴 로드와 무관하게 같은 모양이다.
+#krds-header .header-container .logo a {
+  background-image: url('/logo.svg');
 }
 // 메인메뉴 글자를 참고 사이트(어린이국회) 수준인 18px 로 키운다. 토큰은 .krds-main-menu 스코프.
 #krds-header .krds-main-menu {
@@ -36,6 +15,3 @@
 // 모바일 메뉴 패널 폭. 샘플은 2열(1depth/2depth)인데 여기는 1depth 뿐이라 메뉴 목록이 전체 폭을 쓴다.
 #krds-header .krds-main-menu-mobile .gnb-wrap { width: min(32rem, 85vw); }
 #krds-header .krds-main-menu-mobile .menu-wrap { width: 100%; }
-@media (max-width: 767px) {
-  #krds-header .header-container .logo.site-logo .site-logo-en { display: none; }
-}
