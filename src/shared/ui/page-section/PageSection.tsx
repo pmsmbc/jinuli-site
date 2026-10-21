@@ -1,12 +1,12 @@
 import type { ReactNode } from 'react';
 import './PageSection.scss';
 
-export type PageSectionTone = 'card' | 'dashed';
+export type PageSectionTone = 'card' | 'emphasis';
 
 export interface PageSectionProps {
   id?: string;
   title: string;
-  /** card: 흰 카드(기본). dashed: 흰 카드 + 초록 점선 테두리(강조할 절 하나에만 쓴다). */
+  /** card: 흰 카드(기본). emphasis: 흰 카드 + 초록 실선 테두리(강조할 절 하나에만 쓴다). */
   tone?: PageSectionTone;
   children: ReactNode;
 }

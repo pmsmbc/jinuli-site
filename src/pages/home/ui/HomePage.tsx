@@ -27,7 +27,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <PageSection id="apps" title="만드는 앱" tone="dashed">
+      <PageSection id="apps" title="만드는 앱" tone="emphasis">
         {APPS.map((app) => <AppShowcase key={app.slug} app={app} />)}
       </PageSection>
 

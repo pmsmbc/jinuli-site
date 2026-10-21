@@ -26,8 +26,9 @@
   margin: 2.4rem 0 0.8rem;
   padding: 1.6rem 2rem;
   background: var(--krds-color-light-primary-5);
-  border: 0.2rem dashed var(--krds-light-color-border-primary);
-  border-radius: 1.2rem;
+  border: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-border-primary);
+  border-left-width: 0.4rem;
+  border-radius: var(--krds-radius-medium1);
 }
 .policy h3 {
   margin: 3.2rem 0 1rem;

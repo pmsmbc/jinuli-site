@@ -20,8 +20,8 @@
   border-radius: 1.8rem;
   padding: 3.2rem;
   border: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-border-gray-light);
-  &.dashed {
-    border: 0.2rem dashed var(--krds-light-color-border-primary);
+  &.emphasis {
+    border: 0.2rem solid var(--krds-light-color-border-primary);
   }
 }
 @media (max-width: 767px) {
