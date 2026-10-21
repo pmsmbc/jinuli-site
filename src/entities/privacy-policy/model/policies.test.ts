@@ -22,7 +22,7 @@ describe('대한 어린이 한자 개인정보처리방침', () => {
     for (const s of DAEHAN_KIDS_HANJA_POLICY.sections) expect(s.body.length).toBeGreaterThan(0);
     const all = DAEHAN_KIDS_HANJA_POLICY.sections.flatMap((s) => s.body).join('\n');
     expect(all).not.toContain('앱 스토어 등록 정보의 개발자 연락처');
-    expect(all).toContain('contact@jinuli.com');
+    expect(all).toContain('admin@jinuli.com');
   });
   it('slug 로 찾는다', () => {
     expect(findPolicy('daehan-kids-hanja')).toBe(DAEHAN_KIDS_HANJA_POLICY);

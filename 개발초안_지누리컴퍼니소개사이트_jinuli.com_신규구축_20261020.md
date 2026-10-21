@@ -183,7 +183,7 @@ src/
 
 - 구현 범위: 5.1~5.4절 그대로. 스타일가이드 페이지는 사용자 결정으로 뺐다(5.2절).
 - 추가한 것: `scripts/e2e-check.mjs`(Playwright + axe-core 전 화면 점검, `npm run e2e`). 초안 7절의 "axe·반응형·JS 없이" 항목을 이 스크립트 하나로 돌린다.
-- 결정 반영: 이메일 `contact@jinuli.com`, 사업자번호 "등록 진행 중", 브랜드색 (b) 초록 팔레트 오버라이드, `Jinuli Company`, 정적 시안은 `docs/prototype-static/` 이동, 플랫폼 "안드로이드 · iOS".
+- 결정 반영: 이메일 `admin@jinuli.com`(2026-10-21, 처음 시안 `contact@jinuli.com`에서 교체), 사업자번호 `323-04-03816`(2026-10-21 반영, 그 전까지 "등록 진행 중"), 브랜드색 (b) 초록 팔레트 오버라이드, `Jinuli Company`, 정적 시안은 `docs/prototype-static/` 이동, 플랫폼 "안드로이드 · iOS".
 - KRDS 실측(1.1.0, 초안 2절의 1.0.5 와 다름): `.krds-*` 루트 45개 동일. **krds.min.css 에 Pretendard GOV @font-face 가 없어** 패키지 `resources/fonts/` 를 `krds-overrides.scss` 에서 직접 선언했다. 아이콘·헤더 로고 이미지는 `https://www.krds.go.kr` 에서 받는다(외부 의존). 메인메뉴 현재 항목 밑줄은 secondary(파랑) 토큰을 참조해 `.krds-main-menu` 스코프에서 primary 로 덮었다.
 
 | 검증 항목 | 결과 |

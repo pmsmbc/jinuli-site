@@ -1,12 +1,12 @@
 /**
  * 대한 어린이 한자 개인정보처리방침.
  * 원본: 앱 리포 daehan-kids-hanja `src/features/legal/privacyPolicy.ts` (main 157c67e, 2026-10-20).
- * 원본이 바뀌면 여기도 같이 고친다. 문의처만 PRIVACY_CONTACT 임시값 대신 회사 이메일로 채운다.
+ * 원본이 바뀌면 여기도 같이 고친다. 문의처 PRIVACY_CONTACT 는 앱 리포와 같은 회사 이메일이다.
  */
 import type { PrivacyPolicy } from './types';
 
 const APP_NAME = '대한 어린이 한자';
-const CONTACT = 'contact@jinuli.com';
+const CONTACT = 'admin@jinuli.com';
 
 export const DAEHAN_KIDS_HANJA_POLICY: PrivacyPolicy = {
   appSlug: 'daehan-kids-hanja',
