@@ -5,7 +5,7 @@
 - 기준 브랜치·커밋: 해당 없음(신규 리포). 개인정보처리방침 본문의 원본은 앱 리포 `daehan-kids-hanja` `main` `157c67e` (2026-10-20, https://github.com/pmsmbc/daehan-kids-hanja) 의 `src/features/legal/privacyPolicy.ts`
 - 대상 화면·파일: `/`(회사 소개), `/privacy/`(방침 목록), `/privacy/daehan-kids-hanja/`(앱 방침). React + TypeScript, FSD 레이어, KRDS(`krds-uiux`) CSS
 - 근거: 사용자 요청(2026-10-20) — "앱 스토어 등록에 개인정보처리방침 링크가 필요하다. 사업자등록 진행 중, 도메인 jinuli.com 보유. 지누리컴퍼니 소개 페이지를 만들어 달라." 이어 "리액트로 FSD 아키텍처를 적용하고 KRDS를 적용해서 만들어야 한다."
-- 상태: **배포 완료 — GitHub `pmsmbc/jinuli-site` main `34727d1` push, Pages(workflow)+CNAME jinuli.com 설정(2026-10-20). 카페24 웹호스팅 연결 해제 후 A 레코드 185.199.108.153 반영 확인(2026-10-21). HTTPS 인증서 발급·Enforce HTTPS 는 발급 대기 중.** 검증 결과는 7절 끝에 적었다. 정적 시안은 `docs/prototype-static/` 로 옮겼다.
+- 상태: **배포 완료 — GitHub `pmsmbc/jinuli-site` main `34727d1` push, Pages(workflow)+CNAME jinuli.com 설정(2026-10-20). 카페24 웹호스팅 연결 해제 후 A 레코드 185.199.108.153 반영 확인(2026-10-21). Let's Encrypt 인증서 발급·Enforce HTTPS 켬(2026-10-21). https://jinuli.com/privacy/daehan-kids-hanja/ 200 확인.** 검증 결과는 7절 끝에 적었다. 정적 시안은 `docs/prototype-static/` 로 옮겼다.
 
 ## 1. 결론
 
