@@ -6,8 +6,8 @@ export interface ServiceInfo {
   slug: string;
   name: string;
   kind: ServiceKind;
-  /** 마크에 보일 한 글자(한자). 확정 아이콘이 나오면 iconUrl 로 교체한다. */
-  mark: string;
+  /** 서비스 아이콘(정사각 PNG, public/marks/). 각 서비스 리포의 로고를 192px 로 줄여 복사한 것이다. */
+  icon: string;
   /** 플랫폼·언어 한 줄. 예: '안드로이드 · iOS', '웹 · 한국어·English·日本語' */
   platforms: string;
   status: ServiceStatus;

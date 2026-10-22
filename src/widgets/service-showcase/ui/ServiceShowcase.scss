@@ -6,21 +6,19 @@
   max-width: 76rem;
   & + & { margin-top: var(--krds-gap-9); padding-top: var(--krds-gap-9); border-top: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-border-gray-light); }
 }
-// 마크는 그림 요소라 글자 크기를 직접 적는다(KRDS 토큰 없음).
+// 아이콘 타일. 각 서비스 로고(PNG)를 흰 바탕 둥근 사각에 담는다. 로고 모양이 제각각이라 안쪽 여백으로 크기를 맞춘다.
 .service-mark {
   width: 7.2rem;
   height: 7.2rem;
   border-radius: var(--krds-radius-xlarge1);
-  background: var(--krds-color-light-primary-10);
-  color: var(--krds-light-color-text-primary);
+  background: var(--krds-light-color-surface-white);
+  border: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-border-gray-light);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Noto Serif KR', serif;
-  font-weight: 700;
-  font-size: 3.6rem;
-  line-height: 1;
-  &.large { width: 9.6rem; height: 9.6rem; font-size: 5.2rem; }
+  img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  &.large { width: 9.6rem; height: 9.6rem; }
 }
 .service-showcase-name {
   margin: 0 0 var(--krds-gap-2);
@@ -40,6 +38,6 @@
 .service-showcase-links { display: flex; flex-wrap: wrap; gap: var(--krds-gap-3); margin: var(--krds-gap-6) 0 0; }
 @media (max-width: 767px) {
   .service-showcase { grid-template-columns: 5.6rem 1fr; gap: var(--krds-gap-4); }
-  .service-mark { width: 5.6rem; height: 5.6rem; font-size: 2.8rem; &.large { width: 7.2rem; height: 7.2rem; font-size: 3.8rem; } }
+  .service-mark { width: 5.6rem; height: 5.6rem; &.large { width: 7.2rem; height: 7.2rem; } }
   .service-showcase-name { font-size: var(--krds-mobile-font-size-heading-medium); }
 }

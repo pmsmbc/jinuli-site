@@ -233,3 +233,12 @@ src/
 - `/privacy/` 에 "웹 서비스" 절: 자체 사이트 방침이 확인된 지금 여기는(nowyeogi.com/privacy/)·사또(satto.kr/privacy/)만. **onlivetube.com 은 리포에 /privacy·/about 이 있지만 실서버가 404** (2026-09-09 커밋이 배포 안 된 듯) → 사용자에게 알림, 링크 안 넣음.
 - 구조화 데이터: 웹 서비스마다 WebSite(publisher=Organization), 앱은 SoftwareApplication.
 - 검증: check 통과(12 테스트), e2e 5경로×2 콘솔오류 0·axe 0.
+
+### 12.1 한자 흔적 제거 (2026-10-22)
+
+사용자: "왜 한자로 나오는 거야? 이 사이트는 한자를 이제 버려야지." → 한자 앱 시절의 장식(한자 마크, Noto Serif KR, 인주 도장 파비콘)을 모두 걷어냈다.
+
+- 서비스 마크 → 각 서비스의 실제 로고 PNG(`public/marks/<slug>.png`, 192px). 출처는 `entities/service/model/services.ts` 주석. `ServiceInfo.mark` → `icon`.
+- `index.html` 에서 Google Fonts(Noto Serif KR) 링크 제거 → 외부 글꼴 의존 없음.
+- 파비콘: 녹색(#2e7d4f) 둥근 사각 + 흰 "지"(Pretendard GOV Bold 글리프를 패스로). apple-touch-icon 은 그 SVG 를 180px 로 굳힌 것.
+- og.png 오른쪽도 로고 4개. `make-images.mjs` 는 about:blank 에서 file:// 이미지를 못 읽어 data URI 로 넣는다.

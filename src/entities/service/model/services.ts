@@ -1,6 +1,7 @@
 /**
  * 지누리컴퍼니가 만들고 운영하는 서비스. 운영 중인 것을 앞에, 준비 중인 것을 뒤에 둔다.
  * 소개 문안은 각 서비스 사이트의 소개·메타 설명(2026-10-22 확인)을 바탕으로 썼다. 서비스가 바뀌면 여기만 고친다.
+ * 아이콘 출처: site3/public/brand/logo-mark-192.png, site2/public/logo.png, site/public/favicon/apple-icon-180x180.png, app1/assets/images/icon.png
  */
 import type { ServiceInfo, ServiceStatus } from './types';
 
@@ -9,7 +10,7 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'nowyeogi',
     name: '지금 여기는',
     kind: 'web',
-    mark: '旅',
+    icon: '/marks/nowyeogi.png',
     platforms: '웹 · 한국어 · English · 日本語',
     status: 'released',
     url: 'https://nowyeogi.com/',
@@ -27,7 +28,7 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'satto',
     name: '사또',
     kind: 'web',
-    mark: '運',
+    icon: '/marks/satto.png',
     platforms: '웹 · 한국어',
     status: 'released',
     url: 'https://satto.kr/',
@@ -45,7 +46,7 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'onlivetube',
     name: 'On Live Tube',
     kind: 'web',
-    mark: '生',
+    icon: '/marks/onlivetube.png',
     platforms: '웹 · English',
     status: 'released',
     url: 'https://onlivetube.com/',
@@ -62,7 +63,7 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'daehan-kids-hanja',
     name: '대한 어린이 한자',
     kind: 'app',
-    mark: '字',
+    icon: '/marks/daehan-kids-hanja.png',
     platforms: '안드로이드 · iOS',
     status: 'preparing',
     summary:
