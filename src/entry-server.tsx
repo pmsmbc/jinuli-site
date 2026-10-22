@@ -6,7 +6,7 @@ import { APPS } from '@entities/app';
 import { HeadContext, createHeadStore, renderHead } from '@shared/lib/seo';
 
 /** 미리 만들 경로. 끝 슬래시 포함. 404 는 prerender 가 따로 '/404.html' 로 만든다. */
-export const prerenderPaths: string[] = ['/', '/privacy/', ...APPS.map((a) => `/privacy/${a.slug}/`)];
+export const prerenderPaths: string[] = ['/', '/privacy/', '/privacy/site/', ...APPS.map((a) => `/privacy/${a.slug}/`)];
 
 export const sitemapPaths = prerenderPaths;
 

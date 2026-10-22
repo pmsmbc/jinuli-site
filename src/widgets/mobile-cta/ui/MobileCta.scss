@@ -1,0 +1,18 @@
+// KRDS 에는 고정 행동유도 바 컴포넌트가 없어 토큰만으로 잡는다. z-index 는 헤더(70)·모바일 메뉴(100)보다 낮게.
+.mobile-cta { display: none; }
+@media (max-width: 767px) {
+  .mobile-cta {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    padding: var(--krds-padding-4) var(--krds-contents-padding-x) calc(var(--krds-padding-4) + env(safe-area-inset-bottom));
+    background: var(--krds-light-color-surface-white);
+    border-top: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-border-gray-light);
+  }
+  .mobile-cta-btn { width: 100%; }
+  // 고정 바(large 버튼 높이 size-height-8 + 위아래 padding-4)가 푸터 마지막 줄을 가리지 않게 그만큼 비워 둔다.
+  #krds-footer { margin-bottom: calc(var(--krds-size-height-8) + var(--krds-padding-4) * 2 + env(safe-area-inset-bottom)); }
+}

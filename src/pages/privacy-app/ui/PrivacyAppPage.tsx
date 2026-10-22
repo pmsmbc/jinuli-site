@@ -1,10 +1,9 @@
 import { useParams } from 'react-router';
 import { COMPANY } from '@entities/company';
-import { findPolicy, splitLinks } from '@entities/privacy-policy';
-import { Seo } from '@shared/lib/seo';
-import { KRDSBreadcrumb } from '@shared/ui/krds';
+import { findPolicy } from '@entities/privacy-policy';
+import { Seo, breadcrumbListJsonLd } from '@shared/lib/seo';
 import { NotFoundNotice } from '@widgets/not-found-notice';
-import '@shared/ui/policy-article';
+import { PolicyArticle } from '@widgets/policy-article';
 
 export function PrivacyAppPage() {
   const { slug = '' } = useParams();
@@ -18,36 +17,22 @@ export function PrivacyAppPage() {
     );
   }
 
+  const path = `/privacy/${policy.appSlug}/`;
   return (
     <>
       <Seo
         title={`${policy.appName} 개인정보처리방침`}
-        path={`/privacy/${policy.appSlug}/`}
+        path={path}
         description={`${COMPANY.name}가 만든 앱 '${policy.appName}'의 개인정보처리방침. ${policy.summary}`}
+        jsonLd={[breadcrumbListJsonLd([{ name: '개인정보처리방침', path: '/privacy/' }, { name: policy.appName }], path)]}
       />
-      <div className="policy-wrap">
-        <KRDSBreadcrumb items={[{ label: '개인정보처리방침', to: '/privacy/' }, { label: policy.appName }]} />
-        <article className="policy">
-          <h2 className="policy-title">{policy.appName} 개인정보처리방침</h2>
-          <p className="policy-meta">시행일 {policy.effectiveDate} · 개발사 {COMPANY.name}</p>
-          <div className="policy-body">
-            <p className="policy-summary">{policy.summary}</p>
-
-            {policy.sections.map((s) => (
-              <section key={s.title}>
-                <h3>{s.title}</h3>
-                {s.body.map((para, i) => (
-                  <p key={i}>
-                    {splitLinks(para).map((part, j) =>
-                      part.type === 'link' ? <a key={j} href={part.value}>{part.value}</a> : <span key={j}>{part.value}</span>,
-                    )}
-                  </p>
-                ))}
-              </section>
-            ))}
-          </div>
-        </article>
-      </div>
+      <PolicyArticle
+        crumbs={[{ label: '개인정보처리방침', to: '/privacy/' }, { label: policy.appName }]}
+        title={`${policy.appName} 개인정보처리방침`}
+        meta={`시행일 ${policy.effectiveDate} · 개발사 ${COMPANY.name}`}
+        summary={policy.summary}
+        sections={policy.sections}
+      />
     </>
   );
 }

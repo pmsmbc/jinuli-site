@@ -1,0 +1,3 @@
+// 아코디언 본문 안 문단 간격만 잡는다. 아코디언 자체는 KRDS 기본.
+.faq-answer { margin: 0; }
+.faq-link { margin: var(--krds-gap-3) 0 0; }

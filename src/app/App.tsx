@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router';
 import { HomePage } from '@pages/home';
 import { PrivacyIndexPage } from '@pages/privacy-index';
 import { PrivacyAppPage } from '@pages/privacy-app';
+import { PrivacySitePage } from '@pages/privacy-site';
 import { NotFoundPage } from '@pages/not-found';
 import { Layout } from './Layout';
 import { ScrollToHash } from './ScrollToHash';
@@ -16,6 +17,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/privacy" element={<PrivacyIndexPage />} />
+        <Route path="/privacy/site" element={<PrivacySitePage />} />
         <Route path="/privacy/:slug" element={<PrivacyAppPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

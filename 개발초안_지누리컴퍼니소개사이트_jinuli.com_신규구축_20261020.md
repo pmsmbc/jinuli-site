@@ -196,3 +196,29 @@ src/
 | `npm run e2e` (375px·1280px × 4 라우트) | 콘솔 오류 0, axe WCAG 2.1 A/AA 위반 0, 가로 스크롤 없음, 모바일 전체메뉴 열림→이동→닫힘 확인, 없는 주소 404 |
 
 배포 후 항목(curl, 플레이 콘솔 입력)은 push 뒤에 한다.
+
+## 11. 점검표 반영 (2026-10-22)
+
+사용자가 준 17개 점검표(애널리틱스·행동유도·FAQ·SNS 썸네일·구조화 데이터 등)를 대조해 반영했다.
+
+| 항목 | 결과 |
+|---|---|
+| 1 구글 애널리틱스 | 구글 태그 관리자 `GTM-PQHMGTXF` 를 `shared/config/site.ts` 에 두고 `vite.config.ts` 플러그인이 **빌드 때만** `index.html` 에 넣는다(head 스크립트 + body 첫 noscript). 개발 서버 방문은 통계에 안 섞인다 |
+| 2 첫 화면 행동유도 | 이미 있음(만드는 앱 보기 / 문의하기) |
+| 3 모바일 고정 버튼 | `widgets/mobile-cta`: 767px 이하에서 화면 아래 고정 "이메일로 문의하기". 푸터는 그 높이만큼 margin-bottom |
+| 4 활용사례 | 출시 전이라 제외(사용자 결정). 출시 뒤 실제 후기로 |
+| 5 FAQ 5개 | `entities/faq` + `widgets/faq` + `shared/ui/krds/KRDSAccordion`(accordion.html 구조, 열림은 React 가 `.active`) |
+| 6 답변 시간 | 이미 있음(영업일 3일) |
+| 7 감사페이지 | 메일 링크 유지(사용자 결정, 폼 없음) |
+| 8 SNS 썸네일 | `scripts/make-images.mjs` 가 `public/og.png` 1200×630 생성, `renderHead` 가 og:image·twitter:card 출력 |
+| 9·10 제목·설명 | 이미 있음 |
+| 11 내부 링크 | 이미 있음 + FAQ 답 아래 링크 |
+| 12 탐색 경로 | 이미 있음 + BreadcrumbList 구조화 데이터 |
+| 13 404 | 이미 있음 |
+| 14 대체텍스트 | img 태그 없음(로고 sr-only). og:image:alt 추가 |
+| 15 robots | 이미 있음 |
+| 16 구조화 데이터 | 홈: Organization·WebSite·SoftwareApplication·FAQPage, 방침: BreadcrumbList. `HeadData.jsonLd` |
+| 17 개인정보처리방침 | 앱 방침은 있었음. 애널리틱스를 넣으면서 **웹사이트 방침 `/privacy/site/`** 추가(수집 항목·쿠키·14개월·Google LLC 국외 이전·거부 방법). `/privacy/` 의 "쿠키·분석 도구를 쓰지 않습니다" 문구를 지웠다 |
+| 추가 | `apple-touch-icon.png` 180(iOS 는 SVG 파비콘 불가), `theme-color`, 서치콘솔·네이버 인증 메타 자리(`site.ts` `verification`) |
+
+남은 것(사용자 작업): 서치콘솔·네이버 서치어드바이저에 사이트 등록 후 인증값을 `site.ts` 에 넣고 sitemap 제출. GA4 관리에서 이벤트 데이터 보관 기간을 14개월로(방침 3절과 맞춤). 방침 9절 보호책임자에 대표자 이름을 넣을지 결정.

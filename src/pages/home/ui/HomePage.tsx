@@ -1,17 +1,47 @@
 import { APPS } from '@entities/app';
 import { COMPANY } from '@entities/company';
-import { Seo } from '@shared/lib/seo';
+import { FAQ } from '@entities/faq';
+import { Seo, faqPageJsonLd, type JsonLd } from '@shared/lib/seo';
 import { SITE } from '@shared/config/site';
 import { PageSection } from '@shared/ui';
 import { KRDSButton } from '@shared/ui/krds';
 import { AppShowcase } from '@widgets/app-showcase';
+import { Faq } from '@widgets/faq';
 import { HanjaCard } from '@widgets/hanja-card';
 import './HomePage.scss';
+
+const ORG_ID = `${SITE.url}/#organization`;
+
+/** 첫 화면의 구조화 데이터: 회사, 사이트, 앱, FAQ. 값은 모두 entities 에서 온다. */
+const HOME_JSON_LD: JsonLd[] = [
+  {
+    '@type': 'Organization',
+    '@id': ORG_ID,
+    name: COMPANY.name,
+    alternateName: COMPANY.nameEn,
+    url: `${SITE.url}/`,
+    logo: `${SITE.url}/logo.svg`,
+    email: COMPANY.email,
+    foundingDate: String(COMPANY.foundedYear),
+    contactPoint: { '@type': 'ContactPoint', email: COMPANY.email, contactType: 'customer support', availableLanguage: 'ko' },
+  },
+  { '@type': 'WebSite', url: `${SITE.url}/`, name: SITE.name, inLanguage: 'ko', publisher: { '@id': ORG_ID } },
+  ...APPS.map<JsonLd>((app) => ({
+    '@type': 'SoftwareApplication',
+    name: app.name,
+    applicationCategory: 'EducationalApplication',
+    operatingSystem: app.platforms.replace('안드로이드', 'Android').replace(' · ', ', '),
+    description: app.summary,
+    url: `${SITE.url}/#apps`,
+    author: { '@id': ORG_ID },
+  })),
+  faqPageJsonLd(FAQ.map((f) => ({ question: f.question, answer: f.answer }))),
+];
 
 export function HomePage() {
   return (
     <>
-      <Seo title={SITE.name} path="/" description={SITE.defaultDescription} />
+      <Seo title={SITE.name} path="/" description={SITE.defaultDescription} jsonLd={HOME_JSON_LD} />
 
       <section className="home-hero" aria-labelledby="hero-title">
         <div className="home-hero-in">
@@ -38,6 +68,10 @@ export function HomePage() {
           <dt>사업자등록번호</dt><dd>{COMPANY.businessNumber}</dd>
           <dt>웹사이트</dt><dd><a href={`${SITE.url}/`}>{SITE.url.replace('https://', '')}</a></dd>
         </dl>
+      </PageSection>
+
+      <PageSection id="faq" title="자주 묻는 질문">
+        <Faq />
       </PageSection>
 
       <PageSection id="contact" title="문의">

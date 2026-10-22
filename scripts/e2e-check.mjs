@@ -10,7 +10,7 @@ import { chromium } from 'playwright';
 
 const dist = fileURLToPath(new URL('../dist/', import.meta.url));
 const shots = process.argv[2] ?? '';
-const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.woff': 'font/woff', '.xml': 'application/xml', '.txt': 'text/plain' };
+const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.woff': 'font/woff', '.png': 'image/png', '.xml': 'application/xml', '.txt': 'text/plain' };
 
 const server = createServer((req, res) => {
   let p = join(dist, decodeURIComponent(req.url.split('?')[0]));
@@ -22,7 +22,7 @@ const server = createServer((req, res) => {
 const base = `http://localhost:${server.address().port}`;
 const axeSource = readFileSync(fileURLToPath(new URL('../node_modules/axe-core/axe.min.js', import.meta.url)), 'utf8');
 
-const routes = ['/', '/privacy/', '/privacy/daehan-kids-hanja/', '/no-such-page/'];
+const routes = ['/', '/privacy/', '/privacy/site/', '/privacy/daehan-kids-hanja/', '/no-such-page/'];
 const browser = await chromium.launch();
 let failures = 0;
 for (const route of routes) {

@@ -9,6 +9,7 @@
 | `KRDSInfoList` | `krds-info-list` + decimal/dash/hollow | `html/code/text_list.html` |
 | `KRDSBreadcrumb` | `krds-breadcrumb-wrap > ol.breadcrumb` | `html/code/breadcrumb.html` |
 | `KRDSSkipLink` | `#krds-skip-link` | `html/code/skip_link.html` |
+| `KRDSAccordion` | `krds-accordion[.type-line] > .accordion-item > .accordion-header > .btn-accordion` + `.accordion-collapse > .accordion-body` (열림은 React 가 `.active`) | `html/code/accordion.html`, `accordion_line.html` |
 
 헤더·푸터(`#krds-header`, `#krds-footer`)는 사이트에 하나뿐이라 래퍼 대신 `widgets/site-header`, `widgets/site-footer` 가 샘플 구조를 그대로 따른다.
 
