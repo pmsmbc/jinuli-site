@@ -17,27 +17,27 @@ const fontFaces = `
   @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=block');
 `;
 
-// 사이트와 같은 색: 민트 바탕 #f5faf6, 글자 #1b2e22 / #3f5a48, 카드 테두리 #c9decf, 인주 #c8412e, 초록 #2e7d4f
+// 사이트와 같은 색: 민트 바탕 #f5faf6, 글자 #1b2e22 / #3f5a48, 마크 바탕 #e8f3ea, 초록 #2e7d4f. 마크 글자는 entities/service 와 같다.
+const MARKS = [['旅', '지금 여기는'], ['運', '사또'], ['生', 'On Live Tube'], ['字', '대한 어린이 한자']];
 const og = `<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
   ${fontFaces}
   html,body{margin:0}
   body{width:1200px;height:630px;background:#f5faf6;font-family:'Pretendard GOV',sans-serif;color:#1b2e22;position:relative;overflow:hidden}
-  .wrap{position:absolute;inset:0;padding:72px 80px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:64px}
-  .logo{width:260px;height:80px;background:url('${logo}') no-repeat left center/contain;margin-bottom:40px}
-  h1{margin:0 0 28px;font-size:60px;line-height:1.3;font-weight:700;letter-spacing:-0.02em}
-  p{margin:0;font-size:28px;line-height:1.5;color:#3f5a48;font-weight:400}
-  .url{margin-top:36px;font-size:26px;color:#2e7d4f;font-weight:700}
-  .card{position:relative;width:300px;height:390px;background:#fff;border:2px solid #c9decf;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 24px 48px rgba(27,46,34,.08)}
-  .glyph{font-family:'Noto Serif KR',serif;font-weight:700;font-size:176px;line-height:1}
-  .reading{margin-top:16px;font-size:30px;color:#3f5a48}
-  .grade{position:absolute;top:24px;left:28px;font-size:22px;color:#3f5a48}
-  .seal{position:absolute;top:22px;right:22px;width:72px;height:72px;border:4px solid #c8412e;border-radius:8px;color:#c8412e;font-family:'Noto Serif KR',serif;font-weight:700;font-size:22px;line-height:1.1;display:flex;align-items:center;justify-content:center;letter-spacing:.04em}
+  .wrap{position:absolute;inset:0;padding:72px 80px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:56px}
+  .logo{width:260px;height:80px;background:url('${logo}') no-repeat left center/contain;margin-bottom:36px}
+  h1{margin:0 0 24px;font-size:58px;line-height:1.3;font-weight:700;letter-spacing:-0.02em}
+  p{margin:0;font-size:27px;line-height:1.5;color:#3f5a48;font-weight:400}
+  .url{margin-top:32px;font-size:26px;color:#2e7d4f;font-weight:700}
+  .marks{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 36px;list-style:none;margin:0;padding:0}
+  .marks li{display:flex;flex-direction:column;align-items:center;gap:12px}
+  .mark{width:150px;height:150px;border-radius:28px;background:#e8f3ea;color:#2e7d4f;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif KR',serif;font-weight:700;font-size:84px;line-height:1}
+  .name{font-size:22px;color:#3f5a48;white-space:nowrap}
 </style></head><body><div class="wrap">
   <div><div class="logo"></div>
-    <h1>아이가 혼자서도<br>끝까지 풀 수 있는 학습 앱</h1>
-    <p>광고 없이, 계정 없이, 기기 안에서만 동작하는<br>어린이 학습 앱을 만듭니다.</p>
+    <h1>가입 없이 바로 쓰는<br>앱과 웹 서비스를 만듭니다</h1>
+    <p>여행 정보, 운세, 라이브캠, 어린이 학습 앱까지<br>직접 만들고 운영하는 작은 회사</p>
     <div class="url">jinuli.com</div></div>
-  <div class="card"><span class="grade">8급</span><span class="seal">지누리</span><div class="glyph">學</div><div class="reading">배울 학</div></div>
+  <ul class="marks">${MARKS.map(([m, n]) => `<li><div class="mark">${m}</div><div class="name">${n}</div></li>`).join('')}</ul>
 </div></body></html>`;
 
 // favicon.svg 와 같은 그림을 180px 로. iOS 는 SVG 파비콘을 못 쓰고, SVG 안의 글꼴은 기기에 없을 수 있어 PNG 로 굳힌다.

@@ -222,3 +222,14 @@ src/
 | 추가 | `apple-touch-icon.png` 180(iOS 는 SVG 파비콘 불가), `theme-color`, 서치콘솔·네이버 인증 메타 자리(`site.ts` `verification`) |
 
 남은 것(사용자 작업): 서치콘솔·네이버 서치어드바이저에 사이트 등록 후 인증값을 `site.ts` 에 넣고 sitemap 제출. GA4 관리에서 이벤트 데이터 보관 기간을 14개월로(방침 3절과 맞춤). 방침 9절 보호책임자에 대표자 이름을 넣을지 결정.
+
+## 12. 네 서비스로 확장 (2026-10-22)
+
+사용자: "너무 대한 어린이 한자만 있는 것 같다. 지금 여기는(nowyeogi.com)도 있다." → onlivetube, saju-lotto-speetto 리포도 함께 싣기로, 첫 화면은 회사 전체로 넓히기로 결정.
+
+- `entities/app` → `entities/service` (kind app/web, url, privacy to/href). 순서: 지금 여기는 · 사또 · On Live Tube · 대한 어린이 한자(준비 중).
+- 첫 문구 "가입 없이 바로 쓰는 앱과 웹 서비스를 만듭니다." — 네 서비스의 공통점(회원 가입 없음)을 근거로 썼다. 오른쪽은 한자 카드 대신 서비스 마크 4개(旅 運 生 字). `widgets/hanja-card` 삭제, `app-showcase` → `service-showcase`.
+- 메뉴·푸터 "만드는 앱" → "서비스"(`/#services`). 회사 "하는 일", 기본 meta description, FAQ 5개, 웹사이트 방침 7절, og.png 모두 네 서비스 기준으로.
+- `/privacy/` 에 "웹 서비스" 절: 자체 사이트 방침이 확인된 지금 여기는(nowyeogi.com/privacy/)·사또(satto.kr/privacy/)만. **onlivetube.com 은 리포에 /privacy·/about 이 있지만 실서버가 404** (2026-09-09 커밋이 배포 안 된 듯) → 사용자에게 알림, 링크 안 넣음.
+- 구조화 데이터: 웹 서비스마다 WebSite(publisher=Organization), 앱은 SoftwareApplication.
+- 검증: check 통과(12 테스트), e2e 5경로×2 콘솔오류 0·axe 0.

@@ -11,7 +11,7 @@ import { COMPANY } from '@entities/company';
 import './SiteHeader.scss';
 
 const MENU = [
-  { to: '/#apps', label: '만드는 앱' },
+  { to: '/#services', label: '서비스' },
   { to: '/privacy/', label: '개인정보처리방침' },
   { to: '/#contact', label: '문의' },
 ];
@@ -20,7 +20,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
   const { pathname } = useLocation();
-  // 해시 링크(/#apps 등)는 경로가 같아도 '현재 메뉴'가 아니다. /privacy 아래에서만 방침 메뉴를 현재로 표시한다.
+  // 해시 링크(/#services 등)는 경로가 같아도 '현재 메뉴'가 아니다. /privacy 아래에서만 방침 메뉴를 현재로 표시한다.
   const isActive = (to: string) => !to.includes('#') && pathname.startsWith(to.replace(/\/$/, ''));
 
   return (

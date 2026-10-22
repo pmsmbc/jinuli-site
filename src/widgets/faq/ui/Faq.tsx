@@ -14,9 +14,15 @@ export function Faq() {
             <p className="faq-answer">{f.answer}</p>
             {f.link && (
               <p className="faq-link">
-                <KRDSButton to={f.link.to} variant="text" size="medium">
-                  {f.link.label} <i className="svg-icon ico-angle right" aria-hidden="true"></i>
-                </KRDSButton>
+                {'to' in f.link ? (
+                  <KRDSButton to={f.link.to} variant="text" size="medium">
+                    {f.link.label} <i className="svg-icon ico-angle right" aria-hidden="true"></i>
+                  </KRDSButton>
+                ) : (
+                  <KRDSButton href={f.link.href} variant="text" size="medium">
+                    {f.link.label} <i className="svg-icon ico-angle right" aria-hidden="true"></i>
+                  </KRDSButton>
+                )}
               </p>
             )}
           </>

@@ -2,7 +2,7 @@
 export const COMPANY = {
   name: '지누리컴퍼니',
   nameEn: 'Jinuli Company',
-  description: '모바일 학습 앱 기획과 개발',
+  description: '회원 가입 없이 바로 쓰는 앱과 웹 서비스의 기획·개발·운영',
   email: 'admin@jinuli.com',
   businessNumber: '323-04-03816',
   foundedYear: 2026,

@@ -36,10 +36,23 @@
   dt { color: var(--krds-light-color-text-subtle); }
   dd { margin: 0; }
 }
+// 첫 화면 오른쪽: 서비스 마크 4개(2×2). 마크 타일 자체는 widgets/service-showcase 의 .service-mark.
+.home-hero-marks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: var(--krds-gap-6) var(--krds-gap-8);
+  li { display: flex; flex-direction: column; align-items: center; gap: var(--krds-gap-3); }
+}
+.home-hero-mark-name { font-size: var(--krds-pc-font-size-body-small); color: var(--krds-light-color-text-subtle); white-space: nowrap; }
 .home-contact { margin: var(--krds-gap-7) 0 0; }
 @media (max-width: 767px) {
   .home-hero { padding-top: var(--krds-padding-8); }
   .home-hero-in { grid-template-columns: 1fr; gap: var(--krds-gap-8); }
+  .home-hero-marks { justify-content: start; gap: var(--krds-gap-5) var(--krds-gap-7); }
+  .home-hero-mark-name { font-size: var(--krds-mobile-font-size-body-small); }
   .home-hero-title { font-size: var(--krds-mobile-font-size-display-small); }
   .home-hero-lead { font-size: var(--krds-mobile-font-size-body-large); }
   .home-info { grid-template-columns: 1fr; gap: 0; dd { margin-bottom: var(--krds-gap-4); } }
