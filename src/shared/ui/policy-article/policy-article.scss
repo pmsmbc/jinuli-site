@@ -1,9 +1,9 @@
 // 긴 글(방침·목록) 페이지 공용 스타일. pages/privacy-app, pages/privacy-index 가 쓴다.
 // 홈과 같은 틀: 민트 바탕 위 브레드크럼·제목, 본문은 흰 카드.
 .policy-wrap {
-  max-width: 76rem;
+  max-width: var(--krds-contents-wrap-size);
   margin: 0 auto;
-  padding: 2.4rem 1.6rem 6.4rem;
+  padding: 2.4rem var(--krds-contents-padding-x) 6.4rem;
 }
 .policy-title {
   margin: var(--krds-gap-8) 0 var(--krds-gap-3);
