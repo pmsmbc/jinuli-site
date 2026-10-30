@@ -3,7 +3,6 @@
   grid-template-columns: 7.2rem 1fr;
   gap: var(--krds-gap-6);
   align-items: start;
-  max-width: 76rem;
   & + & { margin-top: var(--krds-gap-9); padding-top: var(--krds-gap-9); border-top: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-border-gray-light); }
 }
 // 아이콘 타일. 각 서비스 로고(PNG)를 흰 바탕 둥근 사각에 담는다. 로고 모양이 제각각이라 안쪽 여백으로 크기를 맞춘다.
