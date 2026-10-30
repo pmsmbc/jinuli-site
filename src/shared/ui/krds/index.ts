@@ -5,3 +5,4 @@ export * from './KRDSInfoList';
 export * from './KRDSBreadcrumb';
 export * from './KRDSSkipLink';
 export * from './KRDSAccordion';
+export * from './KRDSTable';
