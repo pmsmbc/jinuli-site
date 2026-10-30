@@ -2,7 +2,7 @@
 export const SITE = {
   url: 'https://jinuli.com',
   name: '지누리컴퍼니',
-  defaultDescription: '지누리컴퍼니는 회원 가입 없이 바로 쓰는 앱과 웹 서비스를 만듭니다. 초등학생 한자 급수 시험 학습 앱 대한 어린이 한자를 준비하고 있습니다.',
+  defaultDescription: '초등학생 한자 급수 시험(8급·7급·6급·준5급) 학습 앱 대한 어린이 한자. 급수별 한자 플래시카드, 실제 시험과 같은 모의고사 40회, 오답노트. 8급 무료, 광고·회원 가입 없음. 지누리컴퍼니가 만듭니다.',
   /** SNS 공유 썸네일(1200×630). scripts/make-images.mjs 가 public/og.png 를 만든다. */
   ogImage: { path: '/og.png', width: 1200, height: 630 },
   /** 구글 태그 관리자 컨테이너. vite.config.ts 가 빌드 때만 index.html 에 넣는다(개발 서버 방문은 통계에 안 섞이게). 비우면 안 넣는다. */

@@ -5,7 +5,9 @@ React 19 + TypeScript + Vite, FSD 레이어, KRDS(`krds-uiux`) CSS. 빌드하면
 ## 페이지
 | 경로 | 내용 |
 |---|---|
-| `/` | 회사 소개, 만드는 서비스(현재 대한 어린이 한자만 노출, 나머지는 `listed: false`), 회사 정보, 자주 묻는 질문, 문의 |
+| `/` | 대한 어린이 한자 앱 랜딩(앱 소개, 앱 화면, 급수별 분량, 무료·유료, 자주 묻는 질문), 회사 정보, 문의. 다른 서비스는 `listed: false` 로 숨김 |
+| `/hanja/` | 급수별 시험 형식 표와 급수 4개 링크 |
+| `/hanja/{8,7,6,j5}/` | 급수별 배정 한자 표(훈·음·획수·뜻·낱말), 아래 급수 한자, 시험 형식, 앱 안내. 데이터는 `entities/hanja`(앱 리포 `content/hanja.json`·`levels.json` 복사본 — 앱 검수 때 같이 고친다) |
 | `/privacy/` | 개인정보처리방침 목록 |
 | `/privacy/site/` | jinuli.com 웹사이트 개인정보처리방침(구글 애널리틱스 수집·국외 이전 고지) |
 | `/privacy/daehan-kids-hanja/` | 대한 어린이 한자 개인정보처리방침 → 플레이 콘솔·앱스토어 "개인정보처리방침 URL"에 `https://jinuli.com/privacy/daehan-kids-hanja/` |

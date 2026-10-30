@@ -20,7 +20,7 @@ export function PrivacyIndexPage() {
       <div className="policy-wrap">
         <KRDSBreadcrumb items={[{ label: '개인정보처리방침' }]} />
         <article className="policy">
-          <h2 className="policy-title">개인정보처리방침</h2>
+          <h1 className="policy-title">개인정보처리방침</h1>
           <p className="policy-meta">앱과 웹 서비스마다 방침을 따로 두고, 이 웹사이트의 방침은 별도로 둡니다. 해당 방침을 열어 보세요.</p>
           <div className="policy-body">
             <section>

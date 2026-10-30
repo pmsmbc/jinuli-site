@@ -38,8 +38,8 @@ const og = `<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
   .name{font-size:22px;color:#3f5a48;white-space:nowrap}
 </style></head><body><div class="wrap">
   <div><div class="logo"></div>
-    <h1>가입 없이 바로 쓰는<br>앱과 웹 서비스를 만듭니다</h1>
-    <p>초등학생 한자 급수 시험 학습 앱<br>대한 어린이 한자를 준비하는 작은 회사</p>
+    <h1>초등 한자 급수 시험,<br>앱 하나로 준비해요</h1>
+    <p>8급~준5급 플래시카드 · 모의고사 40회 · 오답노트<br>광고 없음 · 회원 가입 없음 · 8급 무료</p>
     <div class="url">jinuli.com</div></div>
   <ul class="marks">${MARKS.map(([m, n]) => `<li><div class="mark"><img src="${dataUri(`public/marks/${m}.png`, 'image/png')}"></div><div class="name">${n}</div></li>`).join('')}</ul>
 </div></body></html>`;

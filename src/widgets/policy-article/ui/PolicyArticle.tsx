@@ -19,7 +19,7 @@ export function PolicyArticle({ crumbs, title, meta, summary, sections }: Props)
     <div className="policy-wrap">
       <KRDSBreadcrumb items={crumbs} />
       <article className="policy">
-        <h2 className="policy-title">{title}</h2>
+        <h1 className="policy-title">{title}</h1>
         <p className="policy-meta">{meta}</p>
         <div className="policy-body">
           <p className="policy-summary">{summary}</p>

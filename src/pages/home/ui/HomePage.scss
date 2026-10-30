@@ -36,22 +36,28 @@
   dt { color: var(--krds-light-color-text-subtle); }
   dd { margin: 0; }
 }
-// 첫 화면 오른쪽: 서비스 마크 4개(2×2). 마크 타일 자체는 widgets/service-showcase 의 .service-mark.
-.home-hero-marks {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: var(--krds-gap-6) var(--krds-gap-8);
-  li { display: flex; flex-direction: column; align-items: center; gap: var(--krds-gap-3); }
-}
+// 첫 화면 오른쪽: 앱 마크 하나. 마크 타일 자체는 widgets/service-showcase 의 .service-mark.
+.home-hero-mark { display: flex; flex-direction: column; align-items: center; gap: var(--krds-gap-3); }
 .home-hero-mark-name { font-size: var(--krds-pc-font-size-body-small); color: var(--krds-light-color-text-subtle); white-space: nowrap; }
 .home-contact { margin: var(--krds-gap-7) 0 0; }
+.home-note { margin: var(--krds-gap-5) 0 0; color: var(--krds-light-color-text-subtle); font-size: var(--krds-pc-font-size-body-small); }
+// 앱 화면 4장. 세로 폰 화면이라 4열, 모바일 2열.
+.home-screens {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--krds-gap-6);
+  figure { margin: 0; }
+  img {
+    display: block; width: 100%; height: auto;
+    border: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-border-gray-light);
+    border-radius: var(--krds-radius-large1);
+  }
+  figcaption { margin: var(--krds-gap-3) 0 0; color: var(--krds-light-color-text-subtle); font-size: var(--krds-pc-font-size-body-small); }
+}
 @media (max-width: 767px) {
   .home-hero { padding-top: var(--krds-padding-8); }
   .home-hero-in { grid-template-columns: 1fr; gap: var(--krds-gap-8); }
-  .home-hero-marks { justify-content: start; gap: var(--krds-gap-5) var(--krds-gap-7); }
+  .home-hero-mark { align-items: start; }
+  .home-screens { grid-template-columns: repeat(2, 1fr); gap: var(--krds-gap-4); }
   .home-hero-mark-name { font-size: var(--krds-mobile-font-size-body-small); }
   .home-hero-title { font-size: var(--krds-mobile-font-size-display-small); }
   .home-hero-lead { font-size: var(--krds-mobile-font-size-body-large); }
