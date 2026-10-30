@@ -5,7 +5,8 @@
  */
 import type { ServiceInfo, ServiceStatus } from './types';
 
-export const SERVICES: ServiceInfo[] = [
+/** 모든 서비스(노출 여부와 무관). 바깥에서는 노출용 SERVICES 를 쓴다. */
+export const ALL_SERVICES: ServiceInfo[] = [
   {
     slug: 'nowyeogi',
     name: '지금 여기는',
@@ -23,6 +24,7 @@ export const SERVICES: ServiceInfo[] = [
       '한국어·영어·일본어로 읽을 수 있음',
     ],
     privacy: { href: 'https://nowyeogi.com/privacy/' },
+    listed: false,
   },
   {
     slug: 'satto',
@@ -41,6 +43,7 @@ export const SERVICES: ServiceInfo[] = [
       '동행복권 공개 자료로 매일 갱신하는 스피또 1등 잔여 현황',
     ],
     privacy: { href: 'https://satto.kr/privacy/' },
+    listed: false,
   },
   {
     slug: 'onlivetube',
@@ -58,6 +61,7 @@ export const SERVICES: ServiceInfo[] = [
       '보고 있는 화면을 그대로 여는 공유 링크',
       '가입도 재생목록도 없이 한 번 클릭',
     ],
+    listed: false,
   },
   {
     slug: 'daehan-kids-hanja',
@@ -84,4 +88,7 @@ export function statusLabel(s: Pick<ServiceInfo, 'kind' | 'status'>): string {
   return labels[s.status];
 }
 
-export const findService = (slug: string): ServiceInfo | undefined => SERVICES.find((s) => s.slug === slug);
+/** 사이트에 노출하는 서비스. 2026-10-30 부터 대한 어린이 한자만 노출한다(나머지는 listed: false). */
+export const SERVICES: ServiceInfo[] = ALL_SERVICES.filter((s) => s.listed !== false);
+
+export const findService = (slug: string): ServiceInfo | undefined => ALL_SERVICES.find((s) => s.slug === slug);

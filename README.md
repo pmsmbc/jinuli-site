@@ -5,7 +5,7 @@ React 19 + TypeScript + Vite, FSD 레이어, KRDS(`krds-uiux`) CSS. 빌드하면
 ## 페이지
 | 경로 | 내용 |
 |---|---|
-| `/` | 회사 소개, 만드는 서비스(지금 여기는·사또·On Live Tube·대한 어린이 한자), 회사 정보, 자주 묻는 질문, 문의 |
+| `/` | 회사 소개, 만드는 서비스(현재 대한 어린이 한자만 노출, 나머지는 `listed: false`), 회사 정보, 자주 묻는 질문, 문의 |
 | `/privacy/` | 개인정보처리방침 목록 |
 | `/privacy/site/` | jinuli.com 웹사이트 개인정보처리방침(구글 애널리틱스 수집·국외 이전 고지) |
 | `/privacy/daehan-kids-hanja/` | 대한 어린이 한자 개인정보처리방침 → 플레이 콘솔·앱스토어 "개인정보처리방침 URL"에 `https://jinuli.com/privacy/daehan-kids-hanja/` |

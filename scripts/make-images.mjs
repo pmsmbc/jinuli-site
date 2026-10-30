@@ -20,7 +20,8 @@ const fontFaces = `
 `;
 
 // 사이트와 같은 색: 민트 바탕 #f5faf6, 글자 #1b2e22 / #3f5a48, 초록 #2e7d4f. 아이콘은 entities/service 와 같은 public/marks/*.png.
-const MARKS = [['nowyeogi', '지금 여기는'], ['satto', '사또'], ['onlivetube', 'On Live Tube'], ['daehan-kids-hanja', '대한 어린이 한자']];
+// 노출하는 서비스만(entities/service 의 listed 와 맞춘다). 2026-10-30 부터 대한 어린이 한자만.
+const MARKS = [['daehan-kids-hanja', '대한 어린이 한자']];
 const og = `<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
   ${fontFaces}
   html,body{margin:0}
@@ -30,15 +31,15 @@ const og = `<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
   h1{margin:0 0 24px;font-size:58px;line-height:1.3;font-weight:700;letter-spacing:-0.02em}
   p{margin:0;font-size:27px;line-height:1.5;color:#3f5a48;font-weight:400}
   .url{margin-top:32px;font-size:26px;color:#2e7d4f;font-weight:700}
-  .marks{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 36px;list-style:none;margin:0;padding:0}
+  .marks{display:grid;grid-template-columns:repeat(${MARKS.length > 1 ? 2 : 1},1fr);gap:28px 36px;list-style:none;margin:0;padding:0}
   .marks li{display:flex;flex-direction:column;align-items:center;gap:12px}
-  .mark{width:150px;height:150px;border-radius:28px;background:#fff;border:2px solid #c9decf;overflow:hidden;display:flex}
+  .mark{width:${MARKS.length > 1 ? 150 : 260}px;height:${MARKS.length > 1 ? 150 : 260}px;border-radius:28px;background:#fff;border:2px solid #c9decf;overflow:hidden;display:flex}
   .mark img{width:100%;height:100%;object-fit:cover}
   .name{font-size:22px;color:#3f5a48;white-space:nowrap}
 </style></head><body><div class="wrap">
   <div><div class="logo"></div>
     <h1>가입 없이 바로 쓰는<br>앱과 웹 서비스를 만듭니다</h1>
-    <p>여행 정보, 운세, 라이브캠, 어린이 학습 앱까지<br>직접 만들고 운영하는 작은 회사</p>
+    <p>초등학생 한자 급수 시험 학습 앱<br>대한 어린이 한자를 준비하는 작은 회사</p>
     <div class="url">jinuli.com</div></div>
   <ul class="marks">${MARKS.map(([m, n]) => `<li><div class="mark"><img src="${dataUri(`public/marks/${m}.png`, 'image/png')}"></div><div class="name">${n}</div></li>`).join('')}</ul>
 </div></body></html>`;

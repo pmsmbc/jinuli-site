@@ -15,6 +15,8 @@ export interface ServiceInfo {
   url?: string;
   summary: string;
   features: string[];
+  /** 사이트에 노출할지. false 면 홈·방침 목록·구조화 데이터·썸네일 어디에도 싣지 않는다(데이터는 남겨 둔다). 기본 true. */
+  listed?: boolean;
   /** 개인정보처리방침. 이 사이트 안 경로(to) 또는 서비스 자체 사이트의 주소(href). 없으면 아직 공개된 방침이 없는 것이다. */
   privacy?: { to: string } | { href: string };
 }

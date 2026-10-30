@@ -50,7 +50,7 @@ export function HomePage() {
         <div className="home-hero-in">
           <div>
             <h2 id="hero-title" className="home-hero-title">가입 없이 바로 쓰는<br />앱과 웹 서비스를<br />만듭니다.</h2>
-            <p className="home-hero-lead">{COMPANY.name}는 여행 정보, 운세, 라이브캠, 어린이 학습 앱까지 회원 가입 없이 바로 쓰는 서비스를 직접 만들고 운영하는 작은 회사입니다.</p>
+            <p className="home-hero-lead">{COMPANY.name}는 회원 가입 없이 바로 쓰는 서비스를 직접 만들고 운영하는 작은 회사입니다. 지금은 초등학생 한자 급수 시험 학습 앱 "대한 어린이 한자"를 준비하고 있습니다.</p>
             <p className="home-hero-actions">
               <KRDSButton to="/#services" variant="primary" size="large">만드는 서비스 보기</KRDSButton>
               <KRDSButton to="/#contact" variant="secondary" size="large">문의하기</KRDSButton>
@@ -85,7 +85,7 @@ export function HomePage() {
       </PageSection>
 
       <PageSection id="contact" title="문의">
-        <p>서비스 이용, 개인정보, 제휴에 관한 문의는 이메일로 보내 주세요. 보통 영업일 기준 3일 안에 답장합니다. 각 서비스의 글 정정·제보는 그 서비스 사이트의 연락처 페이지로도 보낼 수 있습니다.</p>
+        <p>서비스 이용, 개인정보, 제휴에 관한 문의는 이메일로 보내 주세요. 보통 영업일 기준 3일 안에 답장합니다.</p>
         <p className="home-contact">
           <KRDSButton href={`mailto:${COMPANY.email}`} variant="secondary" size="large">{COMPANY.email}</KRDSButton>
         </p>

@@ -35,8 +35,9 @@ export function PrivacyIndexPage() {
               </ul>
             </section>
 
-            <section>
-              <h3>웹 서비스</h3>
+            {EXTERNAL.length > 0 && (
+              <section>
+                <h3>웹 서비스</h3>
               <p>각 서비스는 자체 사이트에 방침을 둡니다. 아래 버튼을 누르면 그 사이트로 이동합니다.</p>
               <ul className="policy-list">
                 {EXTERNAL.map((s) => (
@@ -47,8 +48,9 @@ export function PrivacyIndexPage() {
                     <span className="policy-list-date">{s.url?.replace('https://', '').replace(/\/$/, '')}</span>
                   </li>
                 ))}
-              </ul>
-            </section>
+                </ul>
+              </section>
+            )}
 
             <section>
               <h3>이 웹사이트</h3>

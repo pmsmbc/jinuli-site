@@ -63,7 +63,7 @@ export const SITE_PRIVACY_POLICY: PolicyDoc & { slug: 'site'; name: string } = {
     {
       title: '7. 앱과 다른 웹 서비스의 개인정보처리방침',
       body: [
-        '지누리컴퍼니가 만드는 앱과 다른 웹 서비스(지금 여기는, 사또, On Live Tube)는 이 방침과 별개로 각각 방침을 둡니다. 목록은 개인정보처리방침 페이지(https://jinuli.com/privacy/)에 있습니다.',
+        '지누리컴퍼니가 만드는 앱과 다른 웹 서비스는 이 방침과 별개로 각각 방침을 둡니다. 목록은 개인정보처리방침 페이지(https://jinuli.com/privacy/)에 있습니다.',
       ],
     },
     {
