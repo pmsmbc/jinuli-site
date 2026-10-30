@@ -1,0 +1,23 @@
+// 급수 안내(/hanja/)·급수별 페이지(/hanja/:level) 공용 스타일: 안내문, 급수 카드, 아래 급수 묶음, 급수 이동 버튼. 색·간격·반경은 KRDS 토큰.
+.hanja-note { margin: var(--krds-gap-5) 0 0; color: var(--krds-light-color-text-subtle); font-size: var(--krds-pc-font-size-body-small); }
+.level-cards {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--krds-gap-5);
+}
+.level-card {
+  padding: var(--krds-padding-6);
+  border: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-border-gray-light);
+  border-radius: var(--krds-radius-large1);
+}
+.level-card-title { margin: 0 0 var(--krds-gap-3); font-size: var(--krds-pc-font-size-heading-small); font-weight: var(--krds-font-weight-bold); }
+.level-card-sample { margin: 0 0 var(--krds-gap-2); font-size: var(--krds-pc-font-size-heading-medium); letter-spacing: 0.1em; }
+.level-card-meta { margin: 0 0 var(--krds-gap-3); color: var(--krds-light-color-text-subtle); font-size: var(--krds-pc-font-size-body-small); }
+@media (max-width: 767px) {
+  .level-cards { grid-template-columns: 1fr; }
+  .level-card-title { font-size: var(--krds-mobile-font-size-heading-small); }
+  .level-card-sample { font-size: var(--krds-mobile-font-size-heading-medium); }
+}
+// 급수 페이지(hanja-level)도 이 파일을 쓴다: 아래 급수 묶음, 급수 이동 버튼.
+.lower-level { margin: var(--krds-gap-6) 0 0; }
+.lower-level-title { margin: 0 0 var(--krds-gap-3); font-size: var(--krds-pc-font-size-heading-small); font-weight: var(--krds-font-weight-bold); }
+.level-nav { display: flex; flex-wrap: wrap; gap: var(--krds-gap-3); margin: var(--krds-gap-6) 0 0; }

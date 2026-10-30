@@ -28,8 +28,8 @@ export function SiteFooter() {
               <KRDSButton href={`mailto:${COMPANY.email}`} variant="text" size="medium">
                 이메일 보내기 <i className="svg-icon ico-angle right" aria-hidden="true"></i>
               </KRDSButton>
-              <KRDSButton to="/#services" variant="text" size="medium">
-                만드는 서비스 <i className="svg-icon ico-angle right" aria-hidden="true"></i>
+              <KRDSButton to="/hanja/" variant="text" size="medium">
+                급수별 한자 <i className="svg-icon ico-angle right" aria-hidden="true"></i>
               </KRDSButton>
             </div>
           </div>

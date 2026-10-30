@@ -3,6 +3,8 @@ import '@shared/ui/krds/krds-overrides.scss';
 import './styles/global.scss';
 import { Route, Routes } from 'react-router';
 import { HomePage } from '@pages/home';
+import { HanjaIndexPage } from '@pages/hanja-index';
+import { HanjaLevelPage } from '@pages/hanja-level';
 import { PrivacyIndexPage } from '@pages/privacy-index';
 import { PrivacyAppPage } from '@pages/privacy-app';
 import { PrivacySitePage } from '@pages/privacy-site';
@@ -16,6 +18,8 @@ export function App() {
       <ScrollToHash />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/hanja" element={<HanjaIndexPage />} />
+        <Route path="/hanja/:level" element={<HanjaLevelPage />} />
         <Route path="/privacy" element={<PrivacyIndexPage />} />
         <Route path="/privacy/site" element={<PrivacySitePage />} />
         <Route path="/privacy/:slug" element={<PrivacyAppPage />} />

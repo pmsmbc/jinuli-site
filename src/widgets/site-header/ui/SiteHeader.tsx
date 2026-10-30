@@ -1,6 +1,7 @@
 /**
  * 사이트 헤더. 구조는 node_modules/krds-uiux/html/code/header.html (1.1.0) 을 따른다:
  * header#krds-header > .header-in > .header-container > .inner > .header-branding(.logo, .header-actions)
+ * 로고는 샘플대로 h2.logo (페이지 제목이 h1).
  * 로고는 KRDS 기본 방식(.logo a 의 배경 이미지 + sr-only 글자). 이미지는 public/logo.svg, 교체 CSS 는 SiteHeader.scss.
  * + nav.krds-main-menu(데스크톱) + #mobile-nav.krds-main-menu-mobile(모바일, .is-open 으로 연다)
  * 유틸리티 메뉴·검색·로그인은 이 사이트에 없어 넣지 않는다.
@@ -11,7 +12,8 @@ import { COMPANY } from '@entities/company';
 import './SiteHeader.scss';
 
 const MENU = [
-  { to: '/#services', label: '서비스' },
+  { to: '/#app', label: '앱 소개' },
+  { to: '/hanja/', label: '급수별 한자' },
   { to: '/privacy/', label: '개인정보처리방침' },
   { to: '/#contact', label: '문의' },
 ];
@@ -29,11 +31,11 @@ export function SiteHeader() {
         <div className="header-container">
           <div className="inner">
             <div className="header-branding">
-              <h1 className="logo">
+              <h2 className="logo">
                 <Link to="/">
                   <span className="sr-only">{COMPANY.name}</span>
                 </Link>
-              </h1>
+              </h2>
               <div className="header-actions">
                 <button
                   type="button"

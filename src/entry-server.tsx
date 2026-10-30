@@ -2,11 +2,19 @@
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { App } from './app/App';
+import { LEVELS } from '@entities/hanja';
 import { PRIVACY_POLICIES } from '@entities/privacy-policy';
 import { HeadContext, createHeadStore, renderHead } from '@shared/lib/seo';
 
 /** 미리 만들 경로. 끝 슬래시 포함. 404 는 prerender 가 따로 '/404.html' 로 만든다. */
-export const prerenderPaths: string[] = ['/', '/privacy/', '/privacy/site/', ...PRIVACY_POLICIES.map((p) => `/privacy/${p.appSlug}/`)];
+export const prerenderPaths: string[] = [
+  '/',
+  '/hanja/',
+  ...LEVELS.map((l) => `/hanja/${l.id}/`),
+  '/privacy/',
+  '/privacy/site/',
+  ...PRIVACY_POLICIES.map((p) => `/privacy/${p.appSlug}/`),
+];
 
 export const sitemapPaths = prerenderPaths;
 

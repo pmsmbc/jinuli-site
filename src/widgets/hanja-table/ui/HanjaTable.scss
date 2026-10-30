@@ -1,0 +1,28 @@
+// 표 자체는 KRDS 기본. 한자 한 글자만 heading-medium 크기로 키우고 요약 목록을 칩처럼 배열한다.
+.hanja-char {
+  font-size: var(--krds-pc-font-size-heading-medium);
+  font-weight: var(--krds-font-weight-bold);
+  color: var(--krds-light-color-text-basic);
+}
+.hanja-inline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--krds-gap-3);
+  li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--krds-gap-2);
+    padding: var(--krds-padding-2) var(--krds-padding-4);
+    border: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-border-gray-light);
+    border-radius: var(--krds-radius-medium1);
+    background: var(--krds-light-color-surface-white);
+  }
+}
+.hanja-inline-reading { color: var(--krds-light-color-text-subtle); font-size: var(--krds-pc-font-size-body-small); }
+@media (max-width: 767px) {
+  .hanja-char { font-size: var(--krds-mobile-font-size-heading-medium); }
+  .hanja-inline-reading { font-size: var(--krds-mobile-font-size-body-small); }
+}

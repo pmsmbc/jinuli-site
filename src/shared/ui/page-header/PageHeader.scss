@@ -1,0 +1,22 @@
+// 페이지 머리. 글자·간격은 KRDS 토큰(제목 heading-large, 요약 body-large).
+.page-header-in {
+  max-width: var(--krds-contents-wrap-size);
+  margin: 0 auto;
+  padding: 2.4rem var(--krds-contents-padding-x) 0;
+}
+.page-header-title {
+  margin: var(--krds-gap-8) 0 var(--krds-gap-3);
+  font-size: var(--krds-pc-font-size-heading-large);
+  font-weight: var(--krds-font-weight-bold);
+  line-height: var(--krds-line-height-base);
+}
+.page-header-lead {
+  margin: 0;
+  max-width: 44em;
+  color: var(--krds-light-color-text-subtle);
+  font-size: var(--krds-pc-font-size-body-large);
+}
+@media (max-width: 767px) {
+  .page-header-title { font-size: var(--krds-mobile-font-size-heading-large); }
+  .page-header-lead { font-size: var(--krds-mobile-font-size-body-large); }
+}
